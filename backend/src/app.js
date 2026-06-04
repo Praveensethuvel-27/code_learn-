@@ -25,7 +25,21 @@ const aiLearnRoutes = require("./routes/aiLearn.routes");
 function createApp() {
   const app = express();
 
-  app.use(helmet());
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          connectSrc: ["'self'"],
+          scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+          styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+          fontSrc: ["'self'", "https://fonts.gstatic.com"],
+          imgSrc: ["'self'", "data:", "blob:"],
+          workerSrc: ["'self'", "blob:"],
+        },
+      },
+    })
+  );
   app.use(
     cors({
       origin: process.env.CLIENT_ORIGIN?.split(",").map((s) => s.trim()) ?? true,
