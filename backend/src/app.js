@@ -4,6 +4,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
+const path = require("path");
 
 const { notFound } = require("./middleware/notFound");
 const { errorHandler } = require("./middleware/errorHandler");
@@ -61,6 +62,16 @@ function createApp() {
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai-learn", aiLearnRoutes);
   app.use("/api/admin", adminRoutes);
+
+  // ── Serve React frontend in production ──
+  if (process.env.NODE_ENV === "production") {
+    const frontendDist = path.resolve(__dirname, "../../frontend/dist");
+    app.use(express.static(frontendDist));
+    // Any non-API route → serve React's index.html (for client-side routing)
+    app.get(/^(?!\/api).*/, (_req, res) => {
+      res.sendFile(path.join(frontendDist, "index.html"));
+    });
+  }
 
   app.use(notFound);
   app.use(errorHandler);
