@@ -16,14 +16,14 @@ import { ProblemDetailPage }   from "./pages/ProblemDetailPage.jsx";
 import { ProfilePage }         from "./pages/ProfilePage.jsx";
 
 import { StreakPage }          from "./pages/Streakpage.jsx";
-import { SavedCodesPage }      from "./pages/SavedCodesPage.jsx";
+import { SavedCodesPage }      from "./pages/Savedcodespage.jsx";
 import { PracticePathsPage }   from "./pages/PracticePathsPage.jsx";
 import { LeaderboardPage }     from "./pages/LeaderboardPage.jsx";
 import { RewardsPage }         from "./pages/RewardsPage.jsx";
 
 import { AiChatPage }          from "./pages/AiChatPage.jsx";
 
-import { AdminDashboardPage }  from "./pages/admin/AdminDashboardPage.jsx";
+import { AdminDashboardPage }  from "./pages/admin/Admindashboardpage.jsx";
 import { AdminUsersPage }      from "./pages/admin/AdminUsersPage.jsx";
 import { AdminProblemsPage }   from "./pages/admin/AdminProblemsPage.jsx";
 export default function App() {
