@@ -20,7 +20,7 @@ import { SavedCodesPage }      from "./pages/SavedCodesPage.jsx";
 import { PracticePathsPage }   from "./pages/PracticePathsPage.jsx";
 import { LeaderboardPage }     from "./pages/LeaderboardPage.jsx";
 import { RewardsPage }         from "./pages/RewardsPage.jsx";
-import { AiLearnPage }         from "./pages/AiLearnPage.jsx";
+
 import { AiChatPage }          from "./pages/AiChatPage.jsx";
 
 import { AdminDashboardPage }  from "./pages/admin/AdminDashboardPage.jsx";
@@ -47,7 +47,7 @@ export default function App() {
         <Route path="/streak"          element={<ProtectedRoute><StreakPage /></ProtectedRoute>} />
         <Route path="/leaderboard"     element={<LeaderboardPage />} />
         <Route path="/rewards"         element={<ProtectedRoute><RewardsPage /></ProtectedRoute>} />
-        <Route path="/ai-learn"        element={<AiLearnPage />} />
+        <Route path="/ai-learn"        element={<Navigate to="/" replace />} />
         <Route path="/ai-chat"         element={<ProtectedRoute><AiChatPage /></ProtectedRoute>} />
         <Route path="/milestones"      element={<Navigate to="/streak" replace />} />
         <Route path="/saved-codes"     element={<ProtectedRoute><SavedCodesPage /></ProtectedRoute>} />

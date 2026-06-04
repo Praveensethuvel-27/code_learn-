@@ -19,6 +19,8 @@ import {
   Tooltip,
   Typography,
   Collapse,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import { CodeLearnLogo } from "../components/CodeLearnLogo";
@@ -27,9 +29,9 @@ import CodeIcon from "@mui/icons-material/Code";
 import LogoutIcon from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import SchoolIcon from "@mui/icons-material/School";
 import ExtensionIcon from "@mui/icons-material/Extension";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -38,7 +40,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import SmartToyOutlinedIcon from "@mui/icons-material/SmartToyOutlined";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
@@ -61,8 +62,12 @@ export function AppLayout() {
   const { isAuthed, user, logout } = useAuth();
   const nav = useNavigate();
   const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const [anchorEl, setAnchorEl] = useState(null);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);   // desktop collapse
+  const [mobileOpen, setMobileOpen] = useState(false);    // mobile drawer
   const [practiceOpen, setPracticeOpen] = useState(true);
 
   const initials = user?.name
@@ -70,20 +75,22 @@ export function AppLayout() {
     : "?";
   const dashboardPath = "/dashboard";
   const authNav = [
-    { label: "Dashboard", to: dashboardPath, icon: <DashboardIcon fontSize="small" /> },
-    { label: "AI Learn", to: "/ai-learn", icon: <AutoAwesomeIcon fontSize="small" /> },
-    { label: "AI Chat", to: "/ai-chat", icon: <SmartToyOutlinedIcon fontSize="small" /> },
-    { label: "Editor", to: "/editor", icon: <CodeIcon fontSize="small" /> },
-    { label: "Leaderboard", to: "/leaderboard", icon: <EmojiEventsIcon fontSize="small" /> },
-    { label: "XP & Badges", to: "/rewards", icon: <MilitaryTechIcon fontSize="small" /> },
-    { label: "Streak", to: "/streak", icon: <WhatshotIcon fontSize="small" /> },
-    { label: "Saved Codes", to: "/saved-codes", icon: <BookmarkIcon fontSize="small" /> },
+    { label: "Dashboard",   to: dashboardPath,   icon: <DashboardIcon fontSize="small" /> },
+    { label: "AI Chat",     to: "/ai-chat",       icon: <SmartToyOutlinedIcon fontSize="small" /> },
+    { label: "Editor",      to: "/editor",        icon: <CodeIcon fontSize="small" /> },
+    { label: "Leaderboard", to: "/leaderboard",   icon: <EmojiEventsIcon fontSize="small" /> },
+    { label: "XP & Badges", to: "/rewards",       icon: <MilitaryTechIcon fontSize="small" /> },
+    { label: "Streak",      to: "/streak",        icon: <WhatshotIcon fontSize="small" /> },
+    { label: "Saved Codes", to: "/saved-codes",   icon: <BookmarkIcon fontSize="small" /> },
   ];
 
   const isActive = (to, exact = false) =>
     exact ? location.pathname === to : location.pathname.startsWith(to);
 
-  const sidebar = (
+  const handleMobileClose = () => setMobileOpen(false);
+
+  /* ── Sidebar inner content (shared between desktop & mobile drawer) ── */
+  const sidebarContent = (
     <Box
       sx={{
         width: SIDEBAR_WIDTH,
@@ -94,7 +101,7 @@ export function AppLayout() {
         color: "#fff",
       }}
     >
-      {/* Logo + collapse button */}
+      {/* Logo + close/collapse button */}
       <Box
         sx={{
           px: 2,
@@ -108,17 +115,28 @@ export function AppLayout() {
         <Box
           component={RouterLink}
           to="/"
+          onClick={isMobile ? handleMobileClose : undefined}
           sx={{ textDecoration: "none", color: "#fff", display: "flex", alignItems: "center" }}
         >
           <CodeLearnLogo size={30} dark />
         </Box>
-        <IconButton
-          size="small"
-          onClick={() => setSidebarOpen(false)}
-          sx={{ color: "rgba(255,255,255,0.4)", "&:hover": { color: "#fff" } }}
-        >
-          <ChevronLeftIcon fontSize="small" />
-        </IconButton>
+        {isMobile ? (
+          <IconButton
+            size="small"
+            onClick={handleMobileClose}
+            sx={{ color: "rgba(255,255,255,0.4)", "&:hover": { color: "#fff" } }}
+          >
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        ) : (
+          <IconButton
+            size="small"
+            onClick={() => setSidebarOpen(false)}
+            sx={{ color: "rgba(255,255,255,0.4)", "&:hover": { color: "#fff" } }}
+          >
+            <ChevronLeftIcon fontSize="small" />
+          </IconButton>
+        )}
       </Box>
 
       {/* Nav */}
@@ -131,6 +149,7 @@ export function AppLayout() {
               key={item.to}
               item={item}
               active={isActive(item.to, item.exact)}
+              onClick={isMobile ? handleMobileClose : undefined}
             />
           ))}
           {isAuthed &&
@@ -146,6 +165,7 @@ export function AppLayout() {
                   key={item.to}
                   item={item}
                   active={active}
+                  onClick={isMobile ? handleMobileClose : undefined}
                 />
               );
             })}
@@ -193,6 +213,7 @@ export function AppLayout() {
                     <ListItemButton
                       component={RouterLink}
                       to={item.to}
+                      onClick={isMobile ? handleMobileClose : undefined}
                       sx={{
                         borderRadius: 2,
                         py: 0.8,
@@ -235,34 +256,19 @@ export function AppLayout() {
             <Typography sx={sectionLabelSx}>Admin</Typography>
             <List dense disablePadding>
               <SidebarItem
-                item={{
-                  label: "Admin Panel",
-                  to: "/admin",
-                  icon: <AdminPanelSettingsIcon fontSize="small" />,
-                }}
+                item={{ label: "Admin Panel", to: "/admin", icon: <AdminPanelSettingsIcon fontSize="small" /> }}
                 active={isActive("/admin")}
+                onClick={isMobile ? handleMobileClose : undefined}
               />
               <SidebarItem
-                item={{
-                  label: "Admin • Users",
-                  to: "/dashboard#manage-users",
-                  icon: <PeopleAltIcon fontSize="small" />,
-                }}
-                active={
-                  location.pathname === dashboardPath &&
-                  location.hash === "#manage-users"
-                }
+                item={{ label: "Admin • Users", to: "/dashboard#manage-users", icon: <PeopleAltIcon fontSize="small" /> }}
+                active={location.pathname === dashboardPath && location.hash === "#manage-users"}
+                onClick={isMobile ? handleMobileClose : undefined}
               />
               <SidebarItem
-                item={{
-                  label: "Streak tips",
-                  to: "/dashboard#streak-milestones-admin",
-                  icon: <EditNoteIcon fontSize="small" />,
-                }}
-                active={
-                  location.pathname === dashboardPath &&
-                  location.hash === "#streak-milestones-admin"
-                }
+                item={{ label: "Streak tips", to: "/dashboard#streak-milestones-admin", icon: <EditNoteIcon fontSize="small" /> }}
+                active={location.pathname === dashboardPath && location.hash === "#streak-milestones-admin"}
+                onClick={isMobile ? handleMobileClose : undefined}
               />
             </List>
           </>
@@ -271,19 +277,8 @@ export function AppLayout() {
 
       {/* User footer */}
       {isAuthed && (
-        <Box
-          sx={{
-            px: 2,
-            py: 2,
-            borderTop: "1px solid rgba(255,255,255,0.07)",
-          }}
-        >
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={1.25}
-            sx={{ mb: 1 }}
-          >
+        <Box sx={{ px: 2, py: 2, borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+          <Stack direction="row" alignItems="center" spacing={1.25} sx={{ mb: 1 }}>
             <Avatar
               sx={{
                 width: 32,
@@ -296,25 +291,10 @@ export function AppLayout() {
               {initials}
             </Avatar>
             <Box sx={{ overflow: "hidden", flex: 1 }}>
-              <Typography
-                sx={{
-                  fontSize: 12.5,
-                  fontWeight: 700,
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: 1.2,
-                }}
-                noWrap
-              >
+              <Typography sx={{ fontSize: 12.5, fontWeight: 700, color: "rgba(255,255,255,0.85)", lineHeight: 1.2 }} noWrap>
                 {user?.name ?? "User"}
               </Typography>
-              <Typography
-                sx={{
-                  fontSize: 10.5,
-                  color: "rgba(255,255,255,0.35)",
-                  lineHeight: 1.2,
-                }}
-                noWrap
-              >
+              <Typography sx={{ fontSize: 10.5, color: "rgba(255,255,255,0.35)", lineHeight: 1.2 }} noWrap>
                 {user?.email}
               </Typography>
             </Box>
@@ -323,18 +303,12 @@ export function AppLayout() {
             fullWidth
             size="small"
             startIcon={<LogoutIcon fontSize="small" />}
-            onClick={() => {
-              logout();
-              nav("/");
-            }}
+            onClick={() => { logout(); nav("/"); if (isMobile) handleMobileClose(); }}
             sx={{
               color: "rgba(255,255,255,0.5)",
               justifyContent: "flex-start",
               fontSize: 12,
-              "&:hover": {
-                color: "#f87171",
-                bgcolor: "rgba(239,68,68,0.1)",
-              },
+              "&:hover": { color: "#f87171", bgcolor: "rgba(239,68,68,0.1)" },
             }}
           >
             Logout
@@ -346,27 +320,49 @@ export function AppLayout() {
 
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "background.default" }}>
-      {/* Permanent sidebar */}
-      <Drawer
-        variant="permanent"
-        open={sidebarOpen}
-        sx={{
-          width: sidebarOpen ? SIDEBAR_WIDTH : 0,
-          flexShrink: 0,
-          transition: "width 0.25s ease",
-          "& .MuiDrawer-paper": {
-            width: sidebarOpen ? SIDEBAR_WIDTH : 0,
-            overflow: "hidden",
-            boxSizing: "border-box",
-            border: "none",
-            transition: "width 0.25s ease",
-          },
-        }}
-      >
-        {sidebar}
-      </Drawer>
 
-      {/* Main content */}
+      {/* ── DESKTOP: Permanent collapsible sidebar ── */}
+      {!isMobile && (
+        <Drawer
+          variant="permanent"
+          open={sidebarOpen}
+          sx={{
+            width: sidebarOpen ? SIDEBAR_WIDTH : 0,
+            flexShrink: 0,
+            transition: "width 0.25s ease",
+            "& .MuiDrawer-paper": {
+              width: sidebarOpen ? SIDEBAR_WIDTH : 0,
+              overflow: "hidden",
+              boxSizing: "border-box",
+              border: "none",
+              transition: "width 0.25s ease",
+            },
+          }}
+        >
+          {sidebarContent}
+        </Drawer>
+      )}
+
+      {/* ── MOBILE: Temporary slide-in drawer ── */}
+      {isMobile && (
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleMobileClose}
+          ModalProps={{ keepMounted: true }}
+          sx={{
+            "& .MuiDrawer-paper": {
+              width: SIDEBAR_WIDTH,
+              boxSizing: "border-box",
+              border: "none",
+            },
+          }}
+        >
+          {sidebarContent}
+        </Drawer>
+      )}
+
+      {/* ── Main content ── */}
       <Box sx={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
         {/* Topbar */}
         <AppBar
@@ -380,26 +376,40 @@ export function AppLayout() {
             color: "text.primary",
           }}
         >
-          <Toolbar sx={{ px: { xs: 2, md: 3 }, minHeight: 56 }}>
-            {/* Toggle sidebar */}
-            {!sidebarOpen && (
+          <Toolbar sx={{ px: { xs: 1.5, md: 3 }, minHeight: { xs: 52, md: 56 } }}>
+
+            {/* Mobile hamburger */}
+            {isMobile && (
               <IconButton
                 size="small"
-                onClick={() => setSidebarOpen(true)}
-                sx={{ mr: 1.5 }}
+                onClick={() => setMobileOpen(true)}
+                sx={{ mr: 1 }}
+                aria-label="Open menu"
               >
                 <MenuIcon fontSize="small" />
               </IconButton>
             )}
 
-            {/* Logo (shown when sidebar closed) */}
-            {!sidebarOpen && (
+            {/* Desktop: toggle when sidebar collapsed */}
+            {!isMobile && !sidebarOpen && (
+              <IconButton
+                size="small"
+                onClick={() => setSidebarOpen(true)}
+                sx={{ mr: 1.5 }}
+                aria-label="Open sidebar"
+              >
+                <MenuIcon fontSize="small" />
+              </IconButton>
+            )}
+
+            {/* Logo shown on mobile or when desktop sidebar is closed */}
+            {(isMobile || !sidebarOpen) && (
               <Box
                 component={RouterLink}
                 to="/"
                 sx={{ textDecoration: "none", color: "text.primary", display: "flex", alignItems: "center", mr: 2 }}
               >
-                <CodeLearnLogo size={26} />
+                <CodeLearnLogo size={isMobile ? 24 : 26} />
               </Box>
             )}
 
@@ -412,11 +422,12 @@ export function AppLayout() {
                   <IconButton
                     onClick={(e) => setAnchorEl(e.currentTarget)}
                     sx={{ p: 0.5 }}
+                    aria-label="User menu"
                   >
                     <Avatar
                       sx={{
-                        width: 34,
-                        height: 34,
+                        width: { xs: 30, md: 34 },
+                        height: { xs: 30, md: 34 },
                         background: "linear-gradient(135deg, #6d28d9, #0ea5e9)",
                         fontSize: 13,
                         fontWeight: 700,
@@ -433,60 +444,32 @@ export function AppLayout() {
                   PaperProps={{ sx: { mt: 1, minWidth: 180, borderRadius: 2.5 } }}
                 >
                   <Box sx={{ px: 2, py: 1.5 }}>
-                    <Typography fontWeight={700} fontSize={14}>
-                      {user?.name}
-                    </Typography>
-                    <Typography fontSize={11} color="text.secondary">
-                      {user?.email}
-                    </Typography>
+                    <Typography fontWeight={700} fontSize={14}>{user?.name}</Typography>
+                    <Typography fontSize={11} color="text.secondary">{user?.email}</Typography>
                   </Box>
                   <Divider />
-                  <MenuItem
-                    component={RouterLink}
-                    to="/profile"
-                    onClick={() => setAnchorEl(null)}
-                  >
-                    <ListItemIcon>
-                      <PersonIcon fontSize="small" />
-                    </ListItemIcon>
+                  <MenuItem component={RouterLink} to="/profile" onClick={() => setAnchorEl(null)}>
+                    <ListItemIcon><PersonIcon fontSize="small" /></ListItemIcon>
                     Profile
                   </MenuItem>
                   {user?.role === "admin" && (
-                    <MenuItem
-                      component={RouterLink}
-                      to="/dashboard#manage-users"
-                      onClick={() => setAnchorEl(null)}
-                    >
-                      <ListItemIcon>
-                        <PeopleAltIcon fontSize="small" />
-                      </ListItemIcon>
+                    <MenuItem component={RouterLink} to="/dashboard#manage-users" onClick={() => setAnchorEl(null)}>
+                      <ListItemIcon><PeopleAltIcon fontSize="small" /></ListItemIcon>
                       Admin • Users
                     </MenuItem>
                   )}
                   {user?.role === "admin" && (
-                    <MenuItem
-                      component={RouterLink}
-                      to="/admin"
-                      onClick={() => setAnchorEl(null)}
-                    >
-                      <ListItemIcon>
-                        <AdminPanelSettingsIcon fontSize="small" />
-                      </ListItemIcon>
+                    <MenuItem component={RouterLink} to="/admin" onClick={() => setAnchorEl(null)}>
+                      <ListItemIcon><AdminPanelSettingsIcon fontSize="small" /></ListItemIcon>
                       Admin Panel
                     </MenuItem>
                   )}
                   <Divider />
                   <MenuItem
-                    onClick={() => {
-                      setAnchorEl(null);
-                      logout();
-                      nav("/");
-                    }}
+                    onClick={() => { setAnchorEl(null); logout(); nav("/"); }}
                     sx={{ color: "error.main" }}
                   >
-                    <ListItemIcon>
-                      <LogoutIcon fontSize="small" color="error" />
-                    </ListItemIcon>
+                    <ListItemIcon><LogoutIcon fontSize="small" color="error" /></ListItemIcon>
                     Logout
                   </MenuItem>
                 </Menu>
@@ -498,7 +481,7 @@ export function AppLayout() {
                   to="/login"
                   variant="outlined"
                   size="small"
-                  sx={{ fontWeight: 600 }}
+                  sx={{ fontWeight: 600, fontSize: { xs: 12, md: 14 } }}
                 >
                   Login
                 </Button>
@@ -509,6 +492,7 @@ export function AppLayout() {
                   size="small"
                   sx={{
                     fontWeight: 600,
+                    fontSize: { xs: 12, md: 14 },
                     background: "linear-gradient(135deg, #6d28d9, #7c3aed)",
                   }}
                 >
@@ -520,7 +504,7 @@ export function AppLayout() {
         </AppBar>
 
         {/* Page content */}
-        <Box sx={{ flex: 1, p: { xs: 2, md: 3 }, overflow: "auto" }}>
+        <Box sx={{ flex: 1, p: { xs: 1.5, sm: 2, md: 3 }, overflow: "auto" }}>
           <Outlet />
         </Box>
       </Box>
@@ -529,12 +513,13 @@ export function AppLayout() {
 }
 
 // Reusable sidebar nav item
-function SidebarItem({ item, active }) {
+function SidebarItem({ item, active, onClick }) {
   return (
     <ListItem disablePadding sx={{ mb: 0.25 }}>
       <ListItemButton
         component={RouterLink}
         to={item.to}
+        onClick={onClick}
         sx={{
           borderRadius: 2,
           py: 0.9,
@@ -542,16 +527,12 @@ function SidebarItem({ item, active }) {
           color: active ? "#c4b5fd" : "rgba(255,255,255,0.6)",
           bgcolor: active ? "rgba(124,99,255,0.2)" : "transparent",
           "&:hover": {
-            bgcolor: active
-              ? "rgba(124,99,255,0.25)"
-              : "rgba(255,255,255,0.07)",
+            bgcolor: active ? "rgba(124,99,255,0.25)" : "rgba(255,255,255,0.07)",
             color: "rgba(255,255,255,0.9)",
           },
         }}
       >
-        <ListItemIcon sx={{ minWidth: 32, color: "inherit" }}>
-          {item.icon}
-        </ListItemIcon>
+        <ListItemIcon sx={{ minWidth: 32, color: "inherit" }}>{item.icon}</ListItemIcon>
         <ListItemText
           primary={
             <Typography sx={{ fontSize: 13.5, fontWeight: active ? 600 : 400 }}>

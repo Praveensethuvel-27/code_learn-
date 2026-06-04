@@ -25,8 +25,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import { getTopicMeta } from "../config/aiLearnTopics";
+
 import { api } from "../lib/apiClient";
 import { LEVEL_XP_STEP } from "../config/gamification";
 import { MouseGlowLayer } from "../components/MouseGlowLayer";
@@ -39,7 +38,6 @@ const STATUS = {
 };
 
 const QUICK_LINKS = [
-  { to: "/ai-learn", label: "AI Learn", sub: "Daily tip", Icon: AutoAwesomeIcon, color: "#7c3aed" },
   { to: "/problems", label: "Practice", sub: "70 problems", Icon: ExtensionIcon, color: "#4f46e5" },
   { to: "/leaderboard", label: "Leaderboard", sub: "See your rank", Icon: LeaderboardIcon, color: "#d97706" },
   { to: "/rewards", label: "XP & Badges", sub: "Level up", Icon: WorkspacePremiumIcon, color: "#0891b2" },
@@ -149,25 +147,22 @@ export function StudentDashboardPage({ user }) {
   const [streakProg, setStreakProg] = useState(null);
   const [profile, setProfile] = useState(null);
   const [daily, setDaily] = useState(null);
-  const [aiLearn, setAiLearn] = useState(null);
 
   useEffect(() => {
     (async () => {
       try {
-        const [sRes, cRes, progRes, gamRes, dailyRes, aiRes] = await Promise.all([
+        const [sRes, cRes, progRes, gamRes, dailyRes] = await Promise.all([
           api.get("/submissions/me"),
           api.get("/savedcodes/me"),
           api.get("/streak/progress"),
           api.get("/gamification/me").catch(() => ({ data: {} })),
           api.get("/gamification/challenge/today").catch(() => ({ data: {} })),
-          api.get("/ai-learn/today").catch(() => ({ data: {} })),
         ]);
         setSubs(sRes.data.submissions || []);
         setSavedCodes(cRes.data.savedCodes || []);
         setStreakProg(progRes.data);
         setProfile(gamRes.data?.profile ?? null);
         setDaily(dailyRes.data?.challenge ?? null);
-        setAiLearn(aiRes.data?.lesson ?? null);
       } catch (e) {
         setError(e?.response?.data?.message || "Failed to load dashboard");
       } finally {
@@ -319,46 +314,7 @@ export function StudentDashboardPage({ user }) {
       </Paper>
       </MouseGlowLayer>
 
-      {/* AI Learn today */}
-      {aiLearn && (() => {
-        const meta = getTopicMeta(aiLearn.topic);
-        const TopicIcon = meta.Icon;
-        return (
-          <Paper
-            component={RouterLink}
-            to="/ai-learn"
-            elevation={0}
-            sx={{
-              p: 2,
-              borderRadius: 3,
-              textDecoration: "none",
-              display: "block",
-              bgcolor: "#f5f3ff",
-              border: "2px solid #c4b5fd",
-              transition: "transform 0.15s",
-              "&:hover": { transform: "translateY(-2px)", boxShadow: "0 8px 24px rgba(124,58,237,0.15)" },
-            }}
-          >
-            <Stack direction="row" spacing={1.5} sx={{ alignItems: "center" }}>
-              <Box sx={{ width: 48, height: 48, borderRadius: 2.5, bgcolor: "#7c3aed", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <TopicIcon sx={{ fontSize: 26 }} />
-              </Box>
-              <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography sx={{ fontSize: 10, fontWeight: 800, color: "#6d28d9", letterSpacing: 0.8, textTransform: "uppercase" }}>
-                  AI Learn · Updated today
-                </Typography>
-                <Typography sx={{ fontWeight: 800, fontSize: 16, color: "#0f172a" }} noWrap>
-                  {aiLearn.title}
-                </Typography>
-                <Typography sx={{ fontSize: 12, color: "#64748b" }} noWrap>
-                  {aiLearn.summary}
-                </Typography>
-              </Box>
-              <AutoAwesomeIcon sx={{ color: "#7c3aed" }} />
-            </Stack>
-          </Paper>
-        );
-      })()}
+
 
       {/* Daily challenge */}
       {daily?.slug && (

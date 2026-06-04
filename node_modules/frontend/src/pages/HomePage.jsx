@@ -30,7 +30,6 @@ const FEATURES = [
   { emoji: "🔥", title: "Streak Tracker",       desc: "Build daily habits — complete all practice problems for a bonus streak.",                  color: "#ea580c", bg: "#fff7ed", border: "#fed7aa", to: "/streak"          },
   { emoji: "🏆", title: "Leaderboard",          desc: "Compete on XP and weekly solves. Climb the ranks with your classmates.",                     color: "#f59e0b", bg: "#fffbeb", border: "#fde68a", to: "/leaderboard"     },
   { emoji: "💎", title: "XP & Badges",          desc: "Earn XP per problem, level up, unlock badges including daily challenge rewards.",          color: "#7c3aed", bg: "#ede9fe", border: "#ddd6fe", to: "/rewards"         },
-  { emoji: "✨", title: "AI Learn Path",        desc: "7 modules: Intro AI → Models → ML → Math → Deep Learning → Transformers → LLMs. Daily lesson.", color: "#7c3aed", bg: "#f5f3ff", border: "#e9d5ff", to: "/ai-learn"        },
 ];
 
 const STEPS = [
