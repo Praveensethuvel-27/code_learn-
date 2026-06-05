@@ -16,6 +16,7 @@ function problem({
   constraints = "",
   tags,
   testCases,
+  starterCode,
 }) {
   const visible = testCases.filter((t) => !t.isHidden);
   return {
@@ -33,7 +34,7 @@ function problem({
       output: t.expectedOutput.trimEnd(),
       explanation: "",
     })),
-    starterCode: {
+    starterCode: starterCode || {
       javascript: S.javascript,
       python: S.python,
       java: S.java,
@@ -60,7 +61,14 @@ const PRACTICE_BANK = [
       tc("1 2", "3"),
       tc("10 20", "30", true),
       tc("-5 8", "3")
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "difference-two-numbers",
@@ -75,7 +83,14 @@ const PRACTICE_BANK = [
 
       tc("10 3", "7"),
       tc("3 10", "-7", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "product-two-numbers",
@@ -90,7 +105,14 @@ const PRACTICE_BANK = [
 
       tc("6 7", "42"),
       tc("-3 4", "-12", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "maximum-of-two-numbers",
@@ -105,7 +127,14 @@ const PRACTICE_BANK = [
 
       tc("10 25", "25"),
       tc("25 10", "25", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimum-of-two-numbers",
@@ -120,7 +149,14 @@ const PRACTICE_BANK = [
 
       tc("10 25", "10"),
       tc("-1 -5", "-5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "check-even-or-odd",
@@ -136,7 +172,14 @@ const PRACTICE_BANK = [
       tc("4", "Even"),
       tc("7", "Odd"),
       tc("0", "Even", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "absolute-value",
@@ -151,7 +194,14 @@ const PRACTICE_BANK = [
 
       tc("-15", "15"),
       tc("9", "9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "square-of-a-number",
@@ -166,7 +216,14 @@ const PRACTICE_BANK = [
 
       tc("12", "144"),
       tc("-5", "25", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "sum-of-natural-numbers",
@@ -181,7 +238,14 @@ const PRACTICE_BANK = [
 
       tc("5", "15"),
       tc("10", "55", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "factorial-of-a-number",
@@ -197,7 +261,14 @@ const PRACTICE_BANK = [
       tc("0", "1"),
       tc("5", "120"),
       tc("10", "3628800", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "reverse-a-number",
@@ -212,7 +283,14 @@ const PRACTICE_BANK = [
 
       tc("123", "321"),
       tc("1000", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-digits-in-number",
@@ -227,7 +305,14 @@ const PRACTICE_BANK = [
 
       tc("12345", "5"),
       tc("0", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "sum-of-digits",
@@ -242,7 +327,14 @@ const PRACTICE_BANK = [
 
       tc("123", "6"),
       tc("999", "27", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "largest-of-three-numbers",
@@ -257,7 +349,14 @@ const PRACTICE_BANK = [
 
       tc("1 9 3", "9"),
       tc("-1 -2 -3", "-1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "smallest-of-three-numbers",
@@ -272,7 +371,14 @@ const PRACTICE_BANK = [
 
       tc("1 9 3", "1"),
       tc("5 5 1", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "check-leap-year",
@@ -288,7 +394,14 @@ const PRACTICE_BANK = [
       tc("2024", "Yes"),
       tc("1900", "No"),
       tc("2000", "Yes", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "gcd-of-two-numbers",
@@ -303,7 +416,14 @@ const PRACTICE_BANK = [
 
       tc("12 18", "6"),
       tc("7 13", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst nums = input.split(/\\s+/).map(Number);\nif (nums.length > 0 && !isNaN(nums[0])) {\n  // TODO: Solve the problem using 'nums' array\n  console.log(nums[0]);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    nums = [int(x) for x in input_data]\n    \n    # TODO: Solve the problem using 'nums'\n    print(nums[0])\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<Long> nums = new ArrayList<>();\n        while (sc.hasNextLong()) {\n            nums.add(sc.nextLong());\n        }\n        \n        // TODO: Solve the problem using 'nums' list\n        if (!nums.isEmpty()) {\n            System.out.println(nums.get(0));\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long a = 0, b = 0, c = 0;\n    int count = scanf(\"%lld %lld %lld\", &a, &b, &c);\n    // TODO: Solve the problem using the inputs read\n    if (count >= 1) {\n        printf(\"%lld\\n\", a);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    vector<long long> nums;\n    long long val;\n    while (cin >> val) {\n        nums.push_back(val);\n    }\n    \n    // TODO: Solve the problem using 'nums'\n    if (!nums.empty()) {\n        cout << nums[0] << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "lcm-of-two-numbers",
@@ -318,7 +438,14 @@ const PRACTICE_BANK = [
 
       tc("12 18", "36"),
       tc("4 6", "12", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst nums = input.split(/\\s+/).map(Number);\nif (nums.length > 0 && !isNaN(nums[0])) {\n  // TODO: Solve the problem using 'nums' array\n  console.log(nums[0]);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    nums = [int(x) for x in input_data]\n    \n    # TODO: Solve the problem using 'nums'\n    print(nums[0])\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<Long> nums = new ArrayList<>();\n        while (sc.hasNextLong()) {\n            nums.add(sc.nextLong());\n        }\n        \n        // TODO: Solve the problem using 'nums' list\n        if (!nums.isEmpty()) {\n            System.out.println(nums.get(0));\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long a = 0, b = 0, c = 0;\n    int count = scanf(\"%lld %lld %lld\", &a, &b, &c);\n    // TODO: Solve the problem using the inputs read\n    if (count >= 1) {\n        printf(\"%lld\\n\", a);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    vector<long long> nums;\n    long long val;\n    while (cin >> val) {\n        nums.push_back(val);\n    }\n    \n    // TODO: Solve the problem using 'nums'\n    if (!nums.empty()) {\n        cout << nums[0] << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "check-prime-number",
@@ -334,7 +461,14 @@ const PRACTICE_BANK = [
       tc("7", "Yes"),
       tc("9", "No"),
       tc("2", "Yes", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "nth-fibonacci-number",
@@ -350,7 +484,14 @@ const PRACTICE_BANK = [
       tc("0", "0"),
       tc("7", "13"),
       tc("10", "55", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "palindrome-number-check",
@@ -366,7 +507,14 @@ const PRACTICE_BANK = [
       tc("121", "Yes"),
       tc("123", "No"),
       tc("1221", "Yes", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-vowels-in-string",
@@ -381,7 +529,14 @@ const PRACTICE_BANK = [
 
       tc("hello", "2"),
       tc("sky", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "reverse-a-string",
@@ -396,7 +551,14 @@ const PRACTICE_BANK = [
 
       tc("code", "edoc"),
       tc("a", "a", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "sum-of-array-elements",
@@ -411,7 +573,14 @@ const PRACTICE_BANK = [
 
       tc("3\n1 2 3", "6"),
       tc("5\n1 1 1 1 1", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "maximum-in-array",
@@ -426,7 +595,14 @@ const PRACTICE_BANK = [
 
       tc("4\n3 9 1 7", "9"),
       tc("1\n-5", "-5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimum-in-array",
@@ -441,7 +617,14 @@ const PRACTICE_BANK = [
 
       tc("4\n3 9 1 7", "1"),
       tc("2\n-1 -2", "-2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-even-numbers-in-array",
@@ -456,7 +639,14 @@ const PRACTICE_BANK = [
 
       tc("5\n1 2 3 4 5", "2"),
       tc("3\n2 4 6", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "linear-search-index",
@@ -471,7 +661,14 @@ const PRACTICE_BANK = [
 
       tc("5\n1 3 5 7 9\n5", "2"),
       tc("3\n1 2 3\n4", "-1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "celsius-to-fahrenheit",
@@ -486,7 +683,14 @@ const PRACTICE_BANK = [
 
       tc("0", "32"),
       tc("100", "212", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "simple-interest",
@@ -501,7 +705,14 @@ const PRACTICE_BANK = [
 
       tc("1000 5 2", "100"),
       tc("500 10 1", "50", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "second-largest-in-array",
@@ -516,7 +727,14 @@ const PRACTICE_BANK = [
 
       tc("5\n10 20 30 40 50", "40"),
       tc("4\n7 7 5 9", "7", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "remove-duplicates-sorted-length",
@@ -531,7 +749,14 @@ const PRACTICE_BANK = [
 
       tc("6\n1 1 2 2 3 4", "4"),
       tc("3\n5 5 5", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "bubble-sort-array",
@@ -546,7 +771,14 @@ const PRACTICE_BANK = [
 
       tc("5\n5 1 4 2 3", "1 2 3 4 5"),
       tc("1\n9", "9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "binary-search-position",
@@ -561,7 +793,14 @@ const PRACTICE_BANK = [
 
       tc("5\n1 3 5 7 9\n7", "3"),
       tc("4\n2 4 6 8\n1", "-1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "kadanes-maximum-subarray-sum",
@@ -576,7 +815,14 @@ const PRACTICE_BANK = [
 
       tc("9\n-2 1 -3 4 -1 2 1 -5 4", "6"),
       tc("3\n-1 -2 -3", "-1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "stock-max-profit",
@@ -591,7 +837,14 @@ const PRACTICE_BANK = [
 
       tc("6\n7 1 5 3 6 4", "5"),
       tc("2\n7 6", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "leaders-in-array",
@@ -606,7 +859,14 @@ const PRACTICE_BANK = [
 
       tc("6\n16 17 4 3 5 2", "17 5 2"),
       tc("3\n10 9 8", "10 9 8", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "merge-two-sorted-arrays",
@@ -621,7 +881,14 @@ const PRACTICE_BANK = [
 
       tc("3 3\n1 3 5\n2 4 6", "1 2 3 4 5 6"),
       tc("1 1\n1\n2", "1 2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "find-missing-number-1-to-n",
@@ -636,7 +903,14 @@ const PRACTICE_BANK = [
 
       tc("3\n1 2 4", "3"),
       tc("4\n1 2 3 5", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "anagram-check",
@@ -651,7 +925,14 @@ const PRACTICE_BANK = [
 
       tc("listen\ntsilent", "Yes"),
       tc("abc\ndef", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-parentheses",
@@ -667,7 +948,14 @@ const PRACTICE_BANK = [
       tc("()[]{}", "Yes"),
       tc("(]", "No"),
       tc("([)]", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "integer-square-root",
@@ -682,7 +970,14 @@ const PRACTICE_BANK = [
 
       tc("16", "4"),
       tc("20", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "power-of-a-number",
@@ -697,7 +992,14 @@ const PRACTICE_BANK = [
 
       tc("2 10", "1024"),
       tc("5 0", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-occurrences-in-array",
@@ -712,7 +1014,14 @@ const PRACTICE_BANK = [
 
       tc("6\n1 2 2 3 2 4\n2", "3"),
       tc("3\n1 1 1\n2", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "rotate-array-right-by-one",
@@ -727,7 +1036,14 @@ const PRACTICE_BANK = [
 
       tc("5\n1 2 3 4 5", "5 1 2 3 4"),
       tc("1\n9", "9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-pairs-with-given-sum",
@@ -742,7 +1058,14 @@ const PRACTICE_BANK = [
 
       tc("5\n1 5 7 1 5\n6", "3"),
       tc("3\n1 2 3\n10", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-word-length",
@@ -757,7 +1080,14 @@ const PRACTICE_BANK = [
 
       tc("code learn is fun", "5"),
       tc("a bb ccc", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "armstrong-number-check",
@@ -772,7 +1102,14 @@ const PRACTICE_BANK = [
 
       tc("153", "Yes"),
       tc("123", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "perfect-square-check",
@@ -787,7 +1124,14 @@ const PRACTICE_BANK = [
 
       tc("16", "Yes"),
       tc("15", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "trailing-zeros-in-factorial",
@@ -802,7 +1146,14 @@ const PRACTICE_BANK = [
 
       tc("5", "1"),
       tc("25", "6", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "digit-sum-until-single",
@@ -817,7 +1168,14 @@ const PRACTICE_BANK = [
 
       tc("9875", "2"),
       tc("9", "9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "max-consecutive-ones",
@@ -832,7 +1190,14 @@ const PRACTICE_BANK = [
 
       tc("6\n1 1 0 1 1 1", "3"),
       tc("4\n0 0 0 0", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-increasing-subsequence-length",
@@ -847,7 +1212,14 @@ const PRACTICE_BANK = [
 
       tc("6\n10 9 2 5 3 7", "3"),
       tc("5\n1 2 3 4 5", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "coin-change-minimum-coins-v1",
@@ -862,7 +1234,14 @@ const PRACTICE_BANK = [
 
       tc("11\n3 1 2 5", "3"),
       tc("3\n1 2", "-1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-common-subsequence-length",
@@ -877,7 +1256,14 @@ const PRACTICE_BANK = [
 
       tc("abcde\nace", "3"),
       tc("abc\ndef", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "edit-distance",
@@ -892,7 +1278,14 @@ const PRACTICE_BANK = [
 
       tc("horse\nros", "3"),
       tc("abc\nabc", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "jump-game-reachable",
@@ -907,7 +1300,14 @@ const PRACTICE_BANK = [
 
       tc("5\n2 3 1 1 4", "Yes"),
       tc("3\n3 2 1", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "trapping-rain-water",
@@ -922,7 +1322,14 @@ const PRACTICE_BANK = [
 
       tc("6\n0 1 0 2 1 0", "1"),
       tc("12\n0 1 0 2 1 0 1 3 2 1 2 1", "6", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-diagonal-sum",
@@ -937,7 +1344,14 @@ const PRACTICE_BANK = [
 
       tc("3\n1 2 3\n4 5 6\n7 8 9", "15"),
       tc("2\n1 0\n0 1", "2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-primes-up-to-n",
@@ -952,7 +1366,14 @@ const PRACTICE_BANK = [
 
       tc("10", "4"),
       tc("2", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "majority-element",
@@ -967,7 +1388,14 @@ const PRACTICE_BANK = [
 
       tc("3\n3 3 2", "3"),
       tc("7\n2 2 2 2 3 3 3", "2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "product-array-sign",
@@ -982,7 +1410,14 @@ const PRACTICE_BANK = [
 
       tc("3\n-1 -2 -3", "negative"),
       tc("2\n0 5", "zero", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "find-duplicate-number",
@@ -997,7 +1432,14 @@ const PRACTICE_BANK = [
 
       tc("3\n1 3 4 2 2", "2"),
       tc("1\n1 1", "1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-palindrome-substring-length",
@@ -1012,7 +1454,14 @@ const PRACTICE_BANK = [
 
       tc("babad", "3"),
       tc("cbbd", "2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "subarray-with-zero-sum",
@@ -1027,7 +1476,14 @@ const PRACTICE_BANK = [
 
       tc("5\n4 2 -3 1 6", "Yes"),
       tc("3\n1 2 3", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "maximum-product-subarray",
@@ -1042,7 +1498,14 @@ const PRACTICE_BANK = [
 
       tc("4\n2 3 -2 4", "6"),
       tc("3\n-2 0 -1", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "rotate-matrix-90-degrees-sum",
@@ -1057,7 +1520,14 @@ const PRACTICE_BANK = [
 
       tc("2\n1 2\n3 4", "10"),
       tc("1\n5", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "intersection-of-two-arrays-count",
@@ -1072,7 +1542,14 @@ const PRACTICE_BANK = [
 
       tc("3\n1 2 2\n4\n3 2 2 4", "2"),
       tc("2\n1 2\n2\n3 4", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "check-sorted-array",
@@ -1087,7 +1564,14 @@ const PRACTICE_BANK = [
 
       tc("4\n1 2 2 5", "Yes"),
       tc("3\n3 2 1", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "first-non-repeating-character-index",
@@ -1102,7 +1586,14 @@ const PRACTICE_BANK = [
 
       tc("leetcode", "0"),
       tc("aabb", "-1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-parentheses-balanced",
@@ -1118,7 +1609,14 @@ const PRACTICE_BANK = [
       tc("()", "true"),
       tc("()[]{}", "true"),
       tc("(]", "false", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "postfix-evaluation",
@@ -1134,7 +1632,14 @@ const PRACTICE_BANK = [
       tc("2 3 +", "5"),
       tc("3 4 *", "12"),
       tc("10 2 /", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "reverse-stack",
@@ -1150,7 +1655,14 @@ const PRACTICE_BANK = [
       tc("[1, 2, 3, 4, 5]", "[5, 4, 3, 2, 1]"),
       tc("[10, 20, 30, 40, 50]", "[50, 40, 30, 20, 10]"),
       tc("[100, 200, 300, 400, 500]", "[500, 400, 300, 200, 100]", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-expression",
@@ -1166,7 +1678,14 @@ const PRACTICE_BANK = [
       tc("(1+2)*3", "true"),
       tc("(1+2)*(3-4)", "true"),
       tc("(1+2", "false", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "evaluate-postfix",
@@ -1182,7 +1701,14 @@ const PRACTICE_BANK = [
       tc("2 3 +", "5"),
       tc("3 4 *", "12"),
       tc("10 2 /", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-pair-merging",
@@ -1198,7 +1724,14 @@ const PRACTICE_BANK = [
       tc("5 3\n1 2 3\n4 5 6", "1 2 3 4 5 6"),
       tc("7 2\n1 2 3 4 5 6 7\n8 9", "1 2 3 4 5 6 7 8 9"),
       tc("10 1\n1 2 3 4 5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9 10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-pair-padding",
@@ -1214,7 +1747,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 2 2", "1 2 3 4 5 2 2"),
       tc("1 2 3 4 5 6 7 8 9 10 3 3", "1 2 3 4 5 6 7 8 9 10 3 3"),
       tc("1 2 3 4 5 6 7 8 9 10 11 12 2 2", "1 2 3 4 5 6 7 8 9 10 11 12 2 2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-partitioning",
@@ -1230,7 +1770,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5", "1 2 3 4 5"),
       tc("1 2 3 4 5 6", "1 2 3 4 5 6"),
       tc("1 2 3 4 5 6 7 8 9", "1 2 3 4 5 6 7 8 9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-run-length-encoding",
@@ -1246,7 +1793,14 @@ const PRACTICE_BANK = [
       tc("1 1 2 2 3 3 3", "2 1 2 2 3 3"),
       tc("1 2 2 3 3 3 3 4 4 4 4", "1 2 2 3 3 3 3 4 4 4 4"),
       tc("1 2 3 4 5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9 10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-segment-merging",
@@ -1262,7 +1816,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 1 2 3 4 5", "1 2 3 4 5"),
       tc("1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9 10"),
       tc("1 2 3 4 5 6 7 8 9 10 11 12 1 2 3 4 5 6 7 8 9 10 11 12", "1 2 3 4 5 6 7 8 9 10 11 12", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "maze-exit",
@@ -1278,7 +1839,14 @@ const PRACTICE_BANK = [
       tc("...\n#..\n*..\n...", "3 3"),
       tc("##..\n#...\n*...\n...", "3 3"),
       tc("...\n...\n...\n...", "3 3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "inorder-traversal-bst",
@@ -1294,7 +1862,14 @@ const PRACTICE_BANK = [
       tc("5\n5 3 7 1 4", "1 3 4 5 7"),
       tc("3\n10 5 15", "5 10 15"),
       tc("7\n4 2 6 1 3 5 7", "1 2 3 4 5 6 7", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "subset-sum",
@@ -1310,7 +1885,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10", "[5]"),
       tc("1 2 3 4 5 11", ""),
       tc("1 2 3 4 5 20", "", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "permutations",
@@ -1326,7 +1908,14 @@ const PRACTICE_BANK = [
       tc("abc", "abc,acb,bac,bca,cab,cba"),
       tc("xyz", "xyz,xzy,yzx,zxy,zyx"),
       tc("123", "123,132,213,231,312,321", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "n-queens",
@@ -1342,7 +1931,14 @@ const PRACTICE_BANK = [
       tc("4", "[[0, 1], [1, 2], [2, 3], [3, 0]]"),
       tc("5", "[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]]"),
       tc("6", "", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "grid-path-with-minimum-steps",
@@ -1358,7 +1954,14 @@ const PRACTICE_BANK = [
       tc("3 3 2 2", "2"),
       tc("4 4 3 3", "4"),
       tc("5 5 4 4", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimize-rectangle-perimeter",
@@ -1374,7 +1977,14 @@ const PRACTICE_BANK = [
       tc("10", "16"),
       tc("20", "24"),
       tc("30", "32", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "max-sum-of-subarray-with-constraints",
@@ -1390,7 +2000,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10 100", "15"),
       tc("-1 1 2 3 4 5 6 7 8 9 10 100", "10"),
       tc("1 2 3 4 5 6 7 8 9 10 1000", "10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimize-coin-change",
@@ -1406,7 +2023,14 @@ const PRACTICE_BANK = [
       tc("1 2 5 10 20 50 100 200 500 1000 2000 5000 10000 20000 50000 100000 200000 500000 1000000 2000000 5000000 10000000 20000000 50000000 100000000 200000000 500000000 1000000000 2000000000 5000000000 10000000000 20000000000 50000000000 100000000000 200000000000 500000000000 1000000000000 2000000000000 5000000000000", "3"),
       tc("1 2 5 10 20 50 100 200 500 1000 2000 5000 10000 20000 50000 100000 200000 500000 1000000 2000000 5000000 10000000 20000000 50000000 100000000 200000000 500000000 1000000000 2000000000 5000000000 10000000000 20000000000 50000000000 100000000000 200000000000 500000000000 1000000000000 2000000000000 5000000000000", "4"),
       tc("1 2 5 10 20 50 100 200 500 1000 2000 5000 10000 20000 50000 100000 200000 500000 1000000 2000000 5000000 10000000 20000000 50000000 100000000 200000000 500000000 1000000000 2000000000 5000000000 10000000000 20000000000 50000000000 100000000000 200000000000 500000000000 1000000000000 2000000000000 5000000000000", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "max-sum-of-subarray-with-max-length",
@@ -1422,7 +2046,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10", "55"),
       tc("-1 1 2 3 4 5 6 7 8 9 10", "45"),
       tc("1 2 3 4 5 6 7 8 9 10 100", "55", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-segment-merging-with-gaps",
@@ -1438,7 +2069,14 @@ const PRACTICE_BANK = [
       tc("1 3 5 7 9\n2 4 6 8 10", "1 2 3 4 5 6 7 8 9 10"),
       tc("10 20 30 40 50\n5 15 25 35 45", "5 10 15 20 25 30 35 40 45 50"),
       tc("1 3 5 7 9\n2 4 6 8 10 11 12", "1 2 3 4 5 6 7 8 9 10 11 12", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-pair-padding-with-zeros",
@@ -1454,7 +2092,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4", "1 2 3 4 0"),
       tc("10 20 30 40 50", "10 20 30 40 50 0"),
       tc("1 2 3 4 5", "1 2 3 4 5 0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-partitioning-by-parity",
@@ -1470,7 +2115,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5", "2 4\n1 3 5"),
       tc("10 20 30 40 50", "20 40 50\n10 30"),
       tc("1 2 3 4 5 6", "2 4 6\n1 3 5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-run-length-encoding-with-gaps",
@@ -1486,7 +2138,14 @@ const PRACTICE_BANK = [
       tc("1 3 5 7 9", "1 3 2 1 2 1"),
       tc("10 20 30 40 50", "10 20 2 10 2 1"),
       tc("1 2 3 4 5 6", "1 2 1 1 2 1 1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-segment-merging-with-sorted-subarrays",
@@ -1502,7 +2161,14 @@ const PRACTICE_BANK = [
       tc("1 3 5\n2 4 6", "1 2 3 4 5 6"),
       tc("10 20 30\n5 15 25", "5 10 15 20 25 30"),
       tc("1 3 5\n2 4 6 7 8", "1 2 3 4 5 6 7 8", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-replace-words",
@@ -1518,7 +2184,14 @@ const PRACTICE_BANK = [
       tc("Hello world world\nworld hello", "Hello 5 5\n5 5"),
       tc("This is a test test\n test this", "This is a 4 4\n4 4"),
       tc("This is a very long string with many words\nwords words words words words", "This is a 4 4\n4 4 4 4 4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-find-longest-substring",
@@ -1534,7 +2207,14 @@ const PRACTICE_BANK = [
       tc("abcabcbb", "3"),
       tc("bbbbb", "1"),
       tc("pwwkew", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-count-substrings",
@@ -1550,7 +2230,14 @@ const PRACTICE_BANK = [
       tc("abcabcbb abc", "2"),
       tc("bbbbb b", "4"),
       tc("pwwkew p", "2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-find-all-anagrams",
@@ -1566,7 +2253,14 @@ const PRACTICE_BANK = [
       tc("abcabcbb abc", "[0, 5]"),
       tc("bbbbb b", "[0, 1, 2, 3, 4]"),
       tc("pwwkew p", "[0, 3]", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-replace-substrings",
@@ -1582,7 +2276,14 @@ const PRACTICE_BANK = [
       tc("Hello world world\nworld hello\nhello there", "Hello 5 5\n5 5 there"),
       tc("This is a test test\n test this\n this is a test", "This is a 4 4\n4 4 is a 4"),
       tc("This is a very long string with many words\nwords words words words words", "This is a 4 4\n4 4 4 4 4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-expression-with-operators",
@@ -1598,7 +2299,14 @@ const PRACTICE_BANK = [
       tc("2+3*4", "true"),
       tc("2+3*", "false"),
       tc("2+3*(4/2)", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "postfix-evaluation-with-variables",
@@ -1614,7 +2322,14 @@ const PRACTICE_BANK = [
       tc("a b +", "5"),
       tc("a b * c +", "20"),
       tc("a b * c + d /", "10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "reverse-stack-with-multiple-operations",
@@ -1630,7 +2345,14 @@ const PRACTICE_BANK = [
       tc("push 1\npush 2\nreverse\npop", "[2]"),
       tc("push 1\npush 2\npush 3\nreverse\npop", "[3, 2]"),
       tc("push 1\npush 2\npush 3\nreverse\nreverse\npop", "[3, 2, 1]", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-parentheses-with-variables",
@@ -1646,7 +2368,14 @@ const PRACTICE_BANK = [
       tc("a(b+c)", "true"),
       tc("a(b+c)", "true"),
       tc("a(b+c)", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "postfix-evaluation-with-multiple-variables",
@@ -1662,7 +2391,14 @@ const PRACTICE_BANK = [
       tc("a b + c *", "15"),
       tc("a b * c + d /", "10"),
       tc("a b * c + d / e *", "20", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-diagonal-sum-with-maximum",
@@ -1678,7 +2414,14 @@ const PRACTICE_BANK = [
       tc("3 1 2 3 4 5 6 7 8", "29"),
       tc("4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15", "74"),
       tc("5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", "135", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-search-in-sorted-matrix",
@@ -1694,7 +2437,14 @@ const PRACTICE_BANK = [
       tc("3 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30", "(1, 1)"),
       tc("4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40", "(2, 2)"),
       tc("5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50", "(3, 3)", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-rotate-90-degrees-count",
@@ -1710,7 +2460,14 @@ const PRACTICE_BANK = [
       tc("3 1 2 3 4 5 6 7 8", "3"),
       tc("4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15", "6"),
       tc("5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", "9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-diagonal-sum-with-minimum",
@@ -1726,7 +2483,14 @@ const PRACTICE_BANK = [
       tc("3 1 2 3 4 5 6 7 8", "9"),
       tc("4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15", "24"),
       tc("5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", "45", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-search-in-unsorted-matrix",
@@ -1742,7 +2506,14 @@ const PRACTICE_BANK = [
       tc("3 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30", "(1, 1)"),
       tc("4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40", "(2, 2)"),
       tc("5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50", "(3, 3)", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-replace-words-with-pattern",
@@ -1758,7 +2529,14 @@ const PRACTICE_BANK = [
       tc("Hello, world! world is beautiful.\nworld\nworld", "Hello,  is beautiful.\n  is beautiful.\n  is beautiful."),
       tc("abcabcabc\\nabc\\nabc", "abcabcabc\\nabc\\nabc"),
       tc("This is a test string.\nThis is a test string.\nThis is a test string.", "This is a test string.\nThis is a test string.\nThis is a test string.", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "find-longest-substring-without-repeating-characters",
@@ -1774,7 +2552,14 @@ const PRACTICE_BANK = [
       tc("abcabcbb", "3"),
       tc("bbbbb", "1"),
       tc("pwwkew", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-count-substrings-with-consecutive-repeating-characters",
@@ -1790,7 +2575,14 @@ const PRACTICE_BANK = [
       tc("aaaabbbbcccc", "6"),
       tc("abcabcbb", "0"),
       tc("bbbbb", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimize-rectangle-perimeter-with-rectangles",
@@ -1806,7 +2598,14 @@ const PRACTICE_BANK = [
       tc("3 4\n5 6\n7 8", "34"),
       tc("1 2\n3 4\n5 6", "22"),
       tc("10 20\n30 40\n50 60", "140", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimize-rectangle-area-with-rectangles",
@@ -1822,7 +2621,14 @@ const PRACTICE_BANK = [
       tc("3 4\n5 6\n7 8", "72"),
       tc("1 2\n3 4\n5 6", "14"),
       tc("10 20\n30 40\n50 60", "1200", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "max-sum-of-subarray-with-constraints-and-negative-numbers",
@@ -1838,7 +2644,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5\n10", "15"),
       tc("-1 -2 -3 -4 -5\n-10", "-1"),
       tc("1 -2 3 -4 5\n0", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimize-coin-change-with-coins-and-penalty",
@@ -1854,7 +2667,14 @@ const PRACTICE_BANK = [
       tc("1 2 5\n1 2 3\n10", "2"),
       tc("1 2 5\n2 3 4\n15", "3"),
       tc("1 2 5\n1 2 3\n20", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "max-sum-of-subarray-with-constraints-and-consecutive-numbers",
@@ -1870,7 +2690,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5\n10", "15"),
       tc("-1 -2 -3 -4 -5\n-10", "-1"),
       tc("1 2 3 4 5\n0", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-rotate-90-degrees",
@@ -1886,7 +2713,14 @@ const PRACTICE_BANK = [
       tc("[[1, 2, 3], [4, 5, 6], [7, 8, 9]]", "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]"),
       tc("[[1, 2], [3, 4]]", "[[3, 1], [4, 2]]"),
       tc("[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]", "[[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-array-segment-sum",
@@ -1902,7 +2736,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10\n3", "6"),
       tc("10 20 30 40 50 100\n60", "-1"),
       tc("1 2 3 4 5 10\n20", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-pair-with-given-sum",
@@ -1918,7 +2759,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10\n3", "2"),
       tc("10 20 30 40 50 100\n60", "0"),
       tc("1 2 3 4 5 10\n20", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-maximum-sum-subarray-with-constraints",
@@ -1934,7 +2782,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10\n15", "15"),
       tc("10 20 30 40 50 100\n60", "60"),
       tc("1 2 3 4 5 10\n20", "15", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-minimum-sum-subarray-with-constraints",
@@ -1950,7 +2805,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10\n-10", "-10"),
       tc("10 20 30 40 50 100\n-60", "-60"),
       tc("1 2 3 4 5 10\n-20", "-10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-maximum-sum-subarray-with-consecutive-numbers",
@@ -1966,7 +2828,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10\n15", "15"),
       tc("10 20 30 40 50 100\n60", "60"),
       tc("1 2 3 4 5 10\n20", "15", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-maximum-sum-subarray-with-constraints-and-consecutive-numbers",
@@ -1982,7 +2851,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5\n3\ntrue", "15"),
       tc("5 4 3 2 1\n3\nfalse", "0"),
       tc("10 20 30 40 50 60\n3\ntrue", "150", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-pair-with-given-sum-and-constraints",
@@ -1998,7 +2874,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6\n10\n1 2", "3 7"),
       tc("1 2 3 4 5 6\n20\n1 2", ""),
       tc("10 20 30 40 50 60\n100\n1 2", "40 60", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-expression-with-variables",
@@ -2014,7 +2897,14 @@ const PRACTICE_BANK = [
       tc("a + b * c", "true"),
       tc("a + b *", "false"),
       tc("a + b * c + d", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "maze-exit-with-minimum-steps",
@@ -2030,7 +2920,14 @@ const PRACTICE_BANK = [
       tc("......\n#.....\n#.....\n......\n......", "8"),
       tc(".......#\n#........\n#........\n#........\n#........\n#........\n.......#", "12"),
       tc("##########\n#.........#\n#.........#\n#.........#\n#.........#\n#.........#\n##########", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "subset-sum-with-constraints",
@@ -2046,7 +2943,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4, 5, 6", "false"),
       tc("1 2 3 4, 7, 8", "true"),
       tc("1 2 3 4, 10, 10", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "permutations-of-subsets",
@@ -2062,7 +2966,14 @@ const PRACTICE_BANK = [
       tc("1 2 3, 3", "[[1, 2], [1, 3], [2, 3]]"),
       tc("1 2 3, 4", "[]"),
       tc("1 2 3, 6", "[[1, 2, 3]]", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "bst-level-order-sum",
@@ -2078,7 +2989,14 @@ const PRACTICE_BANK = [
       tc("3\n4 2 6", "4 8"),
       tc("1\n5", "5"),
       tc("7\n4 2 6 1 3 5 7", "4 8 16", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "subset-sum-with-multiples",
@@ -2094,7 +3012,14 @@ const PRACTICE_BANK = [
       tc("1 2 3, 5", "true"),
       tc("1 2 3, 7", "false"),
       tc("1 2 3, 6", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "binary-tree-leaf-count",
@@ -2110,7 +3035,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5", "2"),
       tc("1 2 3 4 5 6 7", "3"),
       tc("1 2 3 4 5 6 7 8 9", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "subset-sum-with-target",
@@ -2126,7 +3058,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10", "1 2 3 4"),
       tc("1 2 3 4 5 20", "No subset found"),
       tc("1 2 3 4 5 15", "1 2 3 4 5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-parentheses-balanced-with-variables",
@@ -2142,7 +3081,14 @@ const PRACTICE_BANK = [
       tc("a + b * (c - d) + e", "true"),
       tc("a + b * (c - d - e", "false"),
       tc("a + b * (c - d) + e + f * g", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-diagonal-sum-with-missing-values",
@@ -2158,7 +3104,14 @@ const PRACTICE_BANK = [
       tc("3\n1 2 3\n4 5 -1\n6 7 8", "30"),
       tc("4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16", "80"),
       tc("5\n1 2 3 4 5\n6 7 8 9 10\n11 12 13 -1 15\n16 17 18 19 20\n21 22 23 24 25", "105", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "substring-replacement-pattern",
@@ -2174,7 +3127,14 @@ const PRACTICE_BANK = [
       tc("Hello world, world is beautiful\nHello world\nworld", "Hello ,  is beautiful\nHello"),
       tc("abcabcabc\nabc\nxyz", "xyzxyzxyz\nxyz"),
       tc("Hello world, world is beautiful\nHello world\nworld\nHello world", "Hello ,  is beautiful\nHello \nHello ,  is beautiful", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-substring-without-repeating-2",
@@ -2190,7 +3150,14 @@ const PRACTICE_BANK = [
       tc("abcabcbb", "3"),
       tc("bbbbb", "1"),
       tc("pwwkew", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-replace-all-substrings",
@@ -2206,7 +3173,14 @@ const PRACTICE_BANK = [
       tc("Hello world, world is beautiful\nHello world\nworld", "Hello ,  is beautiful\nHello"),
       tc("abcabcabc\nabc\nxyz", "xyzxyzxyz\nxyz"),
       tc("Hello world, world is beautiful\nHello world\nworld\nHello world", "Hello ,  is beautiful\nHello \nHello ,  is beautiful", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "find-all-substrings-with-consecutive-repeating-characters",
@@ -2222,7 +3196,14 @@ const PRACTICE_BANK = [
       tc("abcabcbb", "abc,abc"),
       tc("bbbbb", "bbbb"),
       tc("pwwkew", "pww", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "string-replace-substrings-with-pattern",
@@ -2238,7 +3219,14 @@ const PRACTICE_BANK = [
       tc("Hello world, world is beautiful\nHello world\nworld", "Hello ,  is beautiful\nHello"),
       tc("abcabcabc\nabc\nxyz", "xyzxyzxyz\nxyz"),
       tc("Hello world, world is beautiful\nHello world\nworld\nHello world", "Hello ,  is beautiful\nHello \nHello ,  is beautiful", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "relative-sorting-with-missing-numbers",
@@ -2254,7 +3242,14 @@ const PRACTICE_BANK = [
       tc("5 5\n1 2 3 4 5\n2 1 3 5 4", "1 2 3 4 5"),
       tc("5 5\n1 2 3 4 5\n2 1 3 5 6", "1 2 3 4 5"),
       tc("10 10\n1 2 3 4 5 6 7 8 9 10\n2 1 3 5 4 7 6 8 9 10", "1 2 3 4 5 6 7 8 9 10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "rank-array-with-negative-numbers",
@@ -2270,7 +3265,14 @@ const PRACTICE_BANK = [
       tc("5\n1 2 3 4 5", "1 2 3 4 5"),
       tc("5\n-1 -2 -3 -4 -5", "-1 -2 -3 -4 -5"),
       tc("10\n-1 0 1 2 3 4 5 6 7 8", "0 1 2 3 4 5 6 7 8 -1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "selection-sort-with-swapping",
@@ -2286,7 +3288,14 @@ const PRACTICE_BANK = [
       tc("5\n5 4 3 2 1", "1 2 3 4 5"),
       tc("5\n-1 -2 -3 -4 -5", "-5 -4 -3 -2 -1"),
       tc("10\n8 7 6 5 4 3 2 1 0 -1", "-1 0 1 2 3 4 5 6 7 8", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "rank-array-with-zero-sum",
@@ -2302,7 +3311,14 @@ const PRACTICE_BANK = [
       tc("5\n1 2 3 4 5", "1 2 3 4 5"),
       tc("5\n-1 -2 -3 -4 -5", "-1 -2 -3 -4 -5"),
       tc("10\n-1 0 1 2 3 4 5 6 7 8", "-1 1 2 3 4 5 6 7 8 0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimize-rectangle-perimeter-with-rectangles-and-obstacles",
@@ -2318,7 +3334,14 @@ const PRACTICE_BANK = [
       tc("5 3 1 2 3 4 5 6\n7 8 9 10 11 12 13 14", "20"),
       tc("10 5 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19\n20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39", "40"),
       tc("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2", "20", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "max-sum-of-subarray-with-constraints-and-consecutive-numbers-and-negative-numbers",
@@ -2334,7 +3357,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "30"),
       tc("-1 1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "20"),
       tc("1 1 1 1 1 1 1 1 1 1\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "subset-sum-with-multiples-and-constraints",
@@ -2350,7 +3380,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9 10"),
       tc("-1 1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "-1 1 2 3 4 5 6 7 8 9"),
       tc("1 1 1 1 1 1 1 1 1 1\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "1 1 1 1 1 1 1 1 1 1", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-diagonal-sum-with-missing-values-and-constraints",
@@ -2366,7 +3403,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "55"),
       tc("-1 1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "45"),
       tc("1 1 1 1 1 1 1 1 1 1\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "interval-scheduling-with-constraints",
@@ -2382,7 +3426,14 @@ const PRACTICE_BANK = [
       tc("1 3\n2 4\n1 2 3\n3 4 5", "2"),
       tc("1 2\n3 4\n1 2 3 4\n5 6 7 8", "1"),
       tc("1 3\n2 4\n1 2 3 4 5 6\n7 8 9 10 11 12", "2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "gas-station-with-multiple-pumps",
@@ -2398,7 +3449,14 @@ const PRACTICE_BANK = [
       tc("1 3\n2 4\n5 7", "2"),
       tc("1 2\n3 4\n5 6", "1"),
       tc("1 3\n2 4\n5 7 9 11", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "min-operations-to-make-arrays-equal",
@@ -2414,7 +3472,14 @@ const PRACTICE_BANK = [
       tc("1 2 3\n4 5 6", "3"),
       tc("1 1 1\n2 2 2", "0"),
       tc("1 2 3 4\n5 6 7 8", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "min-operations-to-make-arrays-equal-with-multiples",
@@ -2430,7 +3495,14 @@ const PRACTICE_BANK = [
       tc("1 2 3\n4 5 6\n2 3", "3"),
       tc("1 1 1\n2 2 2\n2 3", "0"),
       tc("1 2 3 4\n5 6 7 8\n2 3 4", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "balanced-parentheses-in-expression",
@@ -2446,7 +3518,14 @@ const PRACTICE_BANK = [
       tc("((()))", "true"),
       tc("(()", "false"),
       tc("((())()", "true", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "postfix-evaluation-with-decimal-numbers",
@@ -2462,7 +3541,14 @@ const PRACTICE_BANK = [
       tc("2.5 3.7 +", "6.2"),
       tc("10.2 5.6 -", "4.6"),
       tc("2.5 3.7 4.9 + +", "10.9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "valid-expression-with-decimal-numbers",
@@ -2478,7 +3564,14 @@ const PRACTICE_BANK = [
       tc("2.5 + 3.7", "true"),
       tc("10.2 - 5.6", "true"),
       tc("2.5 3.7 +", "false", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "most-frequent-substring",
@@ -2494,7 +3587,14 @@ const PRACTICE_BANK = [
       tc("abcabcabc\n3", "abc"),
       tc("abcdefg\n2", "ab"),
       tc("aaaabbbbcccc\n3", "aaa", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "target-difference",
@@ -2510,7 +3610,14 @@ const PRACTICE_BANK = [
       tc("[1, 2, 3, 4, 5]\n1", "4"),
       tc("[10, 20, 30, 40, 50]\n10", "0"),
       tc("[1, 2, 3, 4, 5]\n5", "0", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "most-frequent-substring-with-consecutive-duplicates",
@@ -2526,7 +3633,14 @@ const PRACTICE_BANK = [
       tc("abcabcabc 3", "abc"),
       tc("abababab 4", "abab"),
       tc("abcde 5", "abcde", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "target-difference-with-constraints",
@@ -2542,7 +3656,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10", "4"),
       tc("5 5 5 5 5 10", "0"),
       tc("1 2 3 4 5 100", "99", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "duplicate-substring-with-consecutive-duplicates",
@@ -2558,7 +3679,14 @@ const PRACTICE_BANK = [
       tc("abcabcabc 3", "abc"),
       tc("abababab 4", "abab"),
       tc("abcde 5", "abcde", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "most-frequent-substring-with-consecutive-duplicates-and-constraints",
@@ -2574,7 +3702,14 @@ const PRACTICE_BANK = [
       tc("abcabcabc 3", "abc"),
       tc("abababab 4", "abab"),
       tc("abcde 5", "abcde", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "target-difference-with-consecutive-duplicates",
@@ -2590,7 +3725,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 10", "4"),
       tc("5 5 5 5 5 10", "0"),
       tc("1 2 3 4 5 100", "99", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "gas-station-with-constraints",
@@ -2606,7 +3748,14 @@ const PRACTICE_BANK = [
       tc("5 10 20 30 40 50 60 70 80 90\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10", "3"),
       tc("10 100 200 300 400 500 600 700 800 900 1000\n1 2 3 4 5 6 7 8 9 10 11\n1 2 3 4 5 6 7 8 9 10 11", "5"),
       tc("15 1500 2500 3500 4500 5500 6500 7500 8500 9500 10500 11500 12500 13500 14500\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15", "8", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "interval-scheduling-with-constraints-and-penalty",
@@ -2622,7 +3771,14 @@ const PRACTICE_BANK = [
       tc("5 10 20 30 40 50\n1 2 3 4 5 6\n1 2 3 4 5 6\n1 2 3 4 5 6", "4"),
       tc("10 100 200 300 400 500 600 700 800 900 1000\n1 2 3 4 5 6 7 8 9 10 11\n1 2 3 4 5 6 7 8 9 10 11\n1 2 3 4 5 6 7 8 9 10 11", "6"),
       tc("15 1500 2500 3500 4500 5500 6500 7500 8500 9500 10500 11500 12500 13500 14500\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15", "9", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "substring-replace-all-substrings",
@@ -2638,7 +3794,14 @@ const PRACTICE_BANK = [
       tc("Hello, world! Hello, world!\nHello, world!\nHello, world!", "Hello, world! Hello, world!\nHello, world!\nHello, world!"),
       tc("Hello, world! Hello, world!\nHello, world!\nHello, world!", "Hello, world! Hello, world!\nHello, world!\nHello, world!"),
       tc("Hello, world! Hello, world!\nHello, world!\nHello, world!", "Hello, world! Hello, world!\nHello, world!\nHello, world!", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "gas-station-with-constraints-and-penalty",
@@ -2654,7 +3817,14 @@ const PRACTICE_BANK = [
       tc("gas_stations = [10, 20, 30, 40, 50], distances = [5, 10, 15, 20, 25], constraints = [[10, 20], [30, 40]]", "3"),
       tc("gas_stations = [5, 15, 25, 35, 45], distances = [10, 20, 30, 40, 50], constraints = [[10, 20], [30, 40]]", "4"),
       tc("gas_stations = [10, 20, 30, 40, 50], distances = [5, 10, 15, 20, 25], constraints = [[5, 10], [20, 30]]", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-segment-merging-with-sorted-subarrays-and-gaps",
@@ -2670,7 +3840,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10\n3 4 5 6 7 8 9 10 11 12", "1 2 3 4 5 6 7 8 9 10 13 14 15 16 17 18 19 20 21 22"),
       tc("10 9 8 7 6 5 4 3 2 1", "1 2 3 4 5 6 7 8 9 10"),
       tc("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-partitioning-by-parity-and-constraints",
@@ -2686,7 +3863,14 @@ const PRACTICE_BANK = [
       tc("2 4 6 8 10 12 14 16 18 20\n1 3 5 7 9 11 13 15 17 19", "2 4 6 8 10 12 14 16 18 20"),
       tc("1 3 5 7 9 11 13 15 17 19", "1 3 5 7 9 11 13 15 17 19"),
       tc("2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40", "2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-run-length-encoding-with-gaps-and-constraints",
@@ -2702,7 +3886,14 @@ const PRACTICE_BANK = [
       tc("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1", "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1"),
       tc("2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2", "2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2"),
       tc("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-segment-merging-with-sorted-subarrays-and-constraints",
@@ -2718,7 +3909,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10\n3 4 5 6 7 8 9 10 11 12", "1 2 3 4 5 6 7 8 9 10 13 14 15 16 17 18 19 20 21 22"),
       tc("10 9 8 7 6 5 4 3 2 1", "1 2 3 4 5 6 7 8 9 10"),
       tc("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "array-pair-padding-with-zeros-and-constraints",
@@ -2732,7 +3930,14 @@ const PRACTICE_BANK = [
     testCases: [
 
       tc("1 2 3 4 5 6 7 8 9 10\n3 4 5 6 7 8 9 10 11 12", "1 2 3 4 5 6 7 8 9 10 13 14 15 16 17 18 19 20 21 22")
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-maximum-sum-subarray-with-consecutive-numbers-and-negative-numbers",
@@ -2748,7 +3953,14 @@ const PRACTICE_BANK = [
       tc("1 2 -3 4 5 -6 7 8 -9 10", "1 2 -3 4 5 -6 7 8 -9 10"),
       tc("-1 -2 -3 -4 -5", "-1"),
       tc("1 2 3 4 5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9 10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-maximum-sum-subarray-with-constraints-and-consecutive-numbers-and-negative-numbers",
@@ -2764,7 +3976,14 @@ const PRACTICE_BANK = [
       tc("1 2 -3 4 5 -6 7 8 -9 10 100", "1 2 -3 4 5 -6 7 8 -9 10"),
       tc("-1 -2 -3 -4 -5 100", "-1"),
       tc("1 2 3 4 5 6 7 8 9 10 100", "1 2 3 4 5 6 7 8 9 10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  \n  // TODO: Solve the problem using 'arr'\n  console.log(0);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    \n    # TODO: Solve the problem using 'arr'\n    print(0)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            \n            // TODO: Solve the problem using 'arr'\n            System.out.println(0);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        \n        // TODO: Solve the problem using 'arr'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        \n        // TODO: Solve the problem using 'arr'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "two-pointer-pair-with-given-sum-and-constraints-and-consecutive-numbers",
@@ -2780,7 +3999,14 @@ const PRACTICE_BANK = [
       tc("1 2 3 4 5 6 7 8 9 10 20", "10 10"),
       tc("-1 -2 -3 -4 -5 20", "-1 -19"),
       tc("1 2 3 4 5 6 7 8 9 10 20", "10 10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst tokens = input.split(/\\s+/);\nif (tokens.length > 0 && tokens[0] !== \"\") {\n  const n = Number(tokens[0]);\n  const arr = tokens.slice(1, 1 + n).map(Number);\n  const target = Number(tokens[1 + n] ?? 0);\n  \n  // TODO: Solve the problem using 'arr' and 'target'\n  console.log(false);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    arr = [int(x) for x in input_data[1:1+n]]\n    target = int(input_data[1+n])\n    \n    # TODO: Solve the problem using 'arr' and 'target'\n    print(False)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            int[] arr = new int[n];\n            for (int i = 0; i < n; i++) {\n                arr[i] = sc.nextInt();\n            }\n            int target = sc.hasNextInt() ? sc.nextInt() : 0;\n            \n            // TODO: Solve the problem using 'arr' and 'target'\n            System.out.println(false);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        int *arr = (int *)malloc(n * sizeof(int));\n        for (int i = 0; i < n; i++) {\n            if (scanf(\"%d\", &arr[i]) != 1) arr[i] = 0;\n        }\n        int target = 0;\n        if (scanf(\"%d\", &target) != 1) target = 0;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        printf(\"0\\n\");\n        free(arr);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    int n;\n    if (cin >> n) {\n        vector<int> arr(n);\n        for (int i = 0; i < n; i++) cin >> arr[i];\n        int target;\n        cin >> target;\n        \n        // TODO: Solve the problem using 'arr' and 'target'\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "prime-factorization-of-large-number",
@@ -2796,7 +4022,14 @@ const PRACTICE_BANK = [
       tc("1000000007", "7^9"),
       tc("12345678901234567890", "2^2 * 3 * 5^2 * 7 * 11 * 13 * 17 * 19 * 23 * 29 * 31"),
       tc("123456789012345678901234567890", "2^3 * 3^2 * 5 * 7^2 * 11 * 13 * 17 * 19 * 23 * 29 * 31 * 37", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "digit-sum-until-reach-single-digit",
@@ -2812,7 +4045,14 @@ const PRACTICE_BANK = [
       tc("38", "2"),
       tc("999", "4"),
       tc("123456", "7", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "base-conversion-of-large-number",
@@ -2828,7 +4068,14 @@ const PRACTICE_BANK = [
       tc("12345678901234567890 10", "12345678901234567890"),
       tc("12345678901234567890 16", "1a2b3c4d5e6f7g8h9i0j"),
       tc("12345678901234567890 32", "1a2b3c4d5e6f7g8h9i0jklmno", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "gcd-of-three-numbers",
@@ -2844,7 +4091,14 @@ const PRACTICE_BANK = [
       tc("12 18 24", "6"),
       tc("15 20 25", "5"),
       tc("30 45 60", "15", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst nums = input.split(/\\s+/).map(Number);\nif (nums.length > 0 && !isNaN(nums[0])) {\n  // TODO: Solve the problem using 'nums' array\n  console.log(nums[0]);\n}",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    nums = [int(x) for x in input_data]\n    \n    # TODO: Solve the problem using 'nums'\n    print(nums[0])\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        List<Long> nums = new ArrayList<>();\n        while (sc.hasNextLong()) {\n            nums.add(sc.nextLong());\n        }\n        \n        // TODO: Solve the problem using 'nums' list\n        if (!nums.isEmpty()) {\n            System.out.println(nums.get(0));\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long a = 0, b = 0, c = 0;\n    int count = scanf(\"%lld %lld %lld\", &a, &b, &c);\n    // TODO: Solve the problem using the inputs read\n    if (count >= 1) {\n        printf(\"%lld\\n\", a);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    vector<long long> nums;\n    long long val;\n    while (cin >> val) {\n        nums.push_back(val);\n    }\n    \n    // TODO: Solve the problem using 'nums'\n    if (!nums.empty()) {\n        cout << nums[0] << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "prime-number-check-with-multiple-tests",
@@ -2860,7 +4114,14 @@ const PRACTICE_BANK = [
       tc("2 3 4 5 6 7 8 9 10", "true true false false false true false false false"),
       tc("11 12 13 14 15 16 17 18 19", "true false true false false false false false true"),
       tc("20 21 22 23 24 25 26 27 28", "false true false false false false false false false", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-increasing-subsequence",
@@ -2870,12 +4131,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: N. Line 2: N space-separated integers.",
     outputDescription: "Length of the longest increasing subsequence.",
     constraints: "1 <= N <= 2500, -10^4 <= a[i] <= 10^4",
-    tags: ["dp", "arrays"],
+    tags: ["dp","arrays"],
     testCases: [
+
       tc("8\n10 9 2 5 3 7 101 18", "4"),
       tc("4\n0 1 0 3", "3"),
       tc("6\n3 10 2 1 20 50", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimum-edit-distance",
@@ -2885,12 +4154,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: string A. Line 2: string B.",
     outputDescription: "Minimum edit distance (integer).",
     constraints: "1 <= |A|,|B| <= 500",
-    tags: ["dp", "strings"],
+    tags: ["dp","strings"],
     testCases: [
+
       tc("horse\nros", "3"),
       tc("intention\nexecution", "5"),
       tc("kitten\nsitting", "3", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "0-1-knapsack",
@@ -2900,12 +4177,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: N W. Line 2: N weights. Line 3: N values.",
     outputDescription: "Maximum value achievable.",
     constraints: "1 <= N <= 100, 1 <= W <= 1000",
-    tags: ["dp", "greedy"],
+    tags: ["dp","greedy"],
     testCases: [
+
       tc("4 8\n2 3 4 5\n3 4 5 6", "10"),
       tc("3 5\n2 3 4\n3 4 5", "7"),
       tc("5 10\n1 2 3 5 4\n1 6 10 16 8", "22", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "matrix-chain-multiplication",
@@ -2917,10 +4202,18 @@ const PRACTICE_BANK = [
     constraints: "2 <= N <= 20, 1 <= p[i] <= 100",
     tags: ["dp"],
     testCases: [
+
       tc("3\n10 30 5 60", "4500"),
       tc("4\n40 20 30 10 30", "26000"),
       tc("2\n5 10 20", "1000", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-common-substring",
@@ -2930,12 +4223,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: string A. Line 2: string B.",
     outputDescription: "Length of longest common substring.",
     constraints: "1 <= |A|,|B| <= 1000",
-    tags: ["dp", "strings"],
+    tags: ["dp","strings"],
     testCases: [
+
       tc("abcde\nabcfgh", "3"),
       tc("xyzabc\nabc", "3"),
       tc("aaaaa\naaaa", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "coin-change-minimum-coins",
@@ -2945,12 +4246,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: N (number of coins). Line 2: N coin values. Line 3: target amount.",
     outputDescription: "Minimum number of coins, or -1 if impossible.",
     constraints: "1 <= N <= 12, 1 <= coins[i] <= 2*10^4, 0 <= amount <= 10^4",
-    tags: ["dp", "greedy"],
+    tags: ["dp","greedy"],
     testCases: [
+
       tc("3\n1 5 6\n11", "2"),
       tc("2\n2 5\n3", "-1"),
       tc("4\n1 2 5 10\n27", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "word-break-check",
@@ -2960,12 +4269,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: target string s. Line 2: number of dictionary words N. Lines 3..N+2: one dictionary word per line.",
     outputDescription: "Yes if s can be segmented, No otherwise.",
     constraints: "1 <= |s| <= 300, 1 <= N <= 100",
-    tags: ["dp", "strings"],
+    tags: ["dp","strings"],
     testCases: [
+
       tc("leetcode\n2\nleet\ncode", "Yes"),
       tc("applepenapple\n2\napple\npen", "Yes"),
       tc("catsandog\n5\ncats\ndog\nsand\ncat\nan", "No", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "dijkstra-shortest-path",
@@ -2975,12 +4292,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: V E. Lines 2..E+1: u v w (edge from u to v with weight w). Vertices are 1-indexed.",
     outputDescription: "Shortest distance from vertex 1 to vertex V.",
     constraints: "2 <= V <= 100, 1 <= E <= 500, 1 <= w <= 10^4",
-    tags: ["graph", "greedy"],
+    tags: ["graph","greedy"],
     testCases: [
+
       tc("5 6\n1 2 2\n1 3 4\n2 3 1\n2 4 7\n3 5 3\n4 5 1", "6"),
       tc("4 4\n1 2 1\n2 3 2\n3 4 5\n1 4 10", "8"),
       tc("3 2\n1 2 5\n2 3 3", "8", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "topological-sort-dag",
@@ -2990,12 +4315,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: V E. Lines 2..E+1: u v (directed edge from u to v).",
     outputDescription: "Space-separated topological order. (Any valid order is accepted — print lexicographically smallest.)",
     constraints: "2 <= V <= 20, 0 <= E <= V*(V-1)",
-    tags: ["graph", "sorting"],
+    tags: ["graph","sorting"],
     testCases: [
+
       tc("6 6\n5 2\n5 0\n4 0\n4 1\n2 3\n3 1", "4 5 0 2 3 1"),
       tc("4 4\n0 1\n0 2\n1 3\n2 3", "0 1 2 3"),
       tc("3 2\n0 1\n0 2", "0 1 2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "detect-cycle-directed-graph",
@@ -3005,12 +4338,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: V E. Lines 2..E+1: u v (directed edge from u to v).",
     outputDescription: "Yes if cycle exists, No otherwise.",
     constraints: "2 <= V <= 50, 0 <= E <= V*(V-1)",
-    tags: ["graph", "dfs"],
+    tags: ["graph","dfs"],
     testCases: [
+
       tc("4 4\n0 1\n1 2\n2 3\n3 1", "Yes"),
       tc("4 3\n0 1\n1 2\n2 3", "No"),
       tc("3 3\n0 1\n1 2\n2 0", "Yes", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "n-queens-count",
@@ -3020,12 +4361,20 @@ const PRACTICE_BANK = [
     inputDescription: "One integer N.",
     outputDescription: "Number of valid arrangements.",
     constraints: "1 <= N <= 12",
-    tags: ["backtracking", "recursion"],
+    tags: ["backtracking","recursion"],
     testCases: [
+
       tc("4", "2"),
       tc("8", "92"),
       tc("6", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "sudoku-validator",
@@ -3035,12 +4384,20 @@ const PRACTICE_BANK = [
     inputDescription: "9 lines, each with 9 space-separated integers (1-9).",
     outputDescription: "Valid or Invalid.",
     constraints: "All cells contain integers 1-9.",
-    tags: ["arrays", "math"],
+    tags: ["arrays","math"],
     testCases: [
+
       tc("5 3 4 6 7 8 9 1 2\n6 7 2 1 9 5 3 4 8\n1 9 8 3 4 2 5 6 7\n8 5 9 7 6 1 4 2 3\n4 2 6 8 5 3 7 9 1\n7 1 3 9 2 4 8 5 6\n9 6 1 5 3 7 2 8 4\n2 8 7 4 1 9 6 3 5\n3 4 5 2 8 6 1 7 9", "Valid"),
       tc("1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9", "Invalid"),
       tc("5 3 4 6 7 8 9 1 2\n6 7 2 1 9 5 3 4 8\n1 9 8 3 4 2 5 6 7\n8 5 9 7 6 1 4 2 3\n4 2 6 8 5 3 7 9 1\n7 1 3 9 2 4 8 5 6\n9 6 1 5 3 7 2 8 4\n2 8 7 4 1 9 6 3 5\n3 4 5 2 8 6 1 7 1", "Invalid", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "largest-rectangle-histogram",
@@ -3050,12 +4407,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: N. Line 2: N space-separated heights.",
     outputDescription: "Area of the largest rectangle.",
     constraints: "1 <= N <= 10^5, 0 <= height[i] <= 10^4",
-    tags: ["stack", "arrays"],
+    tags: ["stack","arrays"],
     testCases: [
+
       tc("6\n2 1 5 6 2 3", "10"),
       tc("4\n4 4 4 4", "16"),
       tc("7\n6 2 5 4 5 1 6", "12", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "median-of-two-sorted-arrays",
@@ -3065,12 +4430,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: n m. Line 2: n sorted integers (A). Line 3: m sorted integers (B).",
     outputDescription: "Median value (integer if odd total, X.5 if even total).",
     constraints: "1 <= n,m <= 1000",
-    tags: ["binary-search", "arrays"],
+    tags: ["binary-search","arrays"],
     testCases: [
+
       tc("2 2\n1 3\n2 4", "2.5"),
       tc("2 1\n1 2\n3", "2"),
       tc("3 4\n1 3 8\n2 4 5 6", "4", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "minimum-spanning-tree-kruskal",
@@ -3080,12 +4453,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: V E. Lines 2..E+1: u v w (edge with weight w, 1-indexed vertices).",
     outputDescription: "Total weight of the MST.",
     constraints: "2 <= V <= 100, V-1 <= E <= 500, 1 <= w <= 10^4",
-    tags: ["graph", "greedy"],
+    tags: ["graph","greedy"],
     testCases: [
+
       tc("4 5\n1 2 10\n1 3 6\n1 4 5\n2 4 15\n3 4 4", "19"),
       tc("3 3\n1 2 1\n2 3 2\n1 3 5", "3"),
       tc("5 7\n1 2 2\n1 3 3\n2 3 1\n2 4 4\n3 5 5\n4 5 6\n3 4 2", "10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "number-of-islands",
@@ -3095,12 +4476,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: N M. Lines 2..N+1: M space-separated values (0 or 1).",
     outputDescription: "Number of islands.",
     constraints: "1 <= N,M <= 50",
-    tags: ["graph", "dfs", "arrays"],
+    tags: ["graph","dfs","arrays"],
     testCases: [
+
       tc("4 5\n1 1 0 0 0\n1 1 0 0 0\n0 0 1 0 0\n0 0 0 1 1", "3"),
       tc("3 3\n1 0 0\n0 1 0\n0 0 1", "3"),
       tc("2 4\n1 1 0 1\n1 0 0 1", "2", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "longest-palindromic-subsequence",
@@ -3110,12 +4499,20 @@ const PRACTICE_BANK = [
     inputDescription: "One string.",
     outputDescription: "Length of the longest palindromic subsequence.",
     constraints: "1 <= |s| <= 1000",
-    tags: ["dp", "strings"],
+    tags: ["dp","strings"],
     testCases: [
+
       tc("bbbab", "4"),
       tc("cbbd", "2"),
       tc("agbdba", "5", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-inversions-in-array",
@@ -3125,12 +4522,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: N. Line 2: N space-separated integers.",
     outputDescription: "Number of inversions.",
     constraints: "1 <= N <= 10^5, 0 <= a[i] <= 10^5",
-    tags: ["sorting", "divide-and-conquer"],
+    tags: ["sorting","divide-and-conquer"],
     testCases: [
+
       tc("6\n2 4 1 3 5 0", "8"),
       tc("4\n1 2 3 4", "0"),
       tc("5\n5 4 3 2 1", "10", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "regular-expression-match",
@@ -3140,12 +4545,20 @@ const PRACTICE_BANK = [
     inputDescription: "Line 1: the input string. Line 2: the pattern.",
     outputDescription: "Yes or No.",
     constraints: "1 <= |s|,|p| <= 200",
-    tags: ["dp", "strings"],
+    tags: ["dp","strings"],
     testCases: [
+
       tc("aa\na*", "Yes"),
       tc("cb\n?a", "No"),
       tc("adceb\na*b", "Yes", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\n// TODO: Solve the problem using 'input'\nconsole.log(input);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().strip()\n    if not input_data:\n        return\n        \n    # TODO: Solve the problem using 'input_data'\n    print(input_data)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNext()) {\n            String s = sc.useDelimiter(\"\\\\A\").next().trim();\n            \n            // TODO: Solve the problem using 's'\n            System.out.println(s);\n        }\n    }\n}",
+  "c": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char s[10005];\n    if (scanf(\"%10000s\", s) == 1) {\n        // TODO: Solve the problem using 's'\n        printf(\"%s\\n\", s);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    string s;\n    if (cin >> s) {\n        // TODO: Solve the problem using 's'\n        cout << s << \"\\n\";\n    }\n    return 0;\n}"
+}
   }),
   problem({
     slug: "count-ways-to-reach-nth-stair",
@@ -3155,12 +4568,20 @@ const PRACTICE_BANK = [
     inputDescription: "One integer N.",
     outputDescription: "Number of distinct ways modulo 10^9+7.",
     constraints: "1 <= N <= 10^6",
-    tags: ["dp", "math"],
+    tags: ["dp","math"],
     testCases: [
+
       tc("4", "7"),
       tc("5", "13"),
       tc("10", "274", true)
-    ]
+    ],
+    starterCode: {
+  "javascript": "const input = (() => {\n  const b = new Uint8Array(65536);\n  const n = Deno.stdin.readSync(b);\n  return n > 0 ? new TextDecoder().decode(b.subarray(0, n)) : \"\";\n})().trim();\n\nconst n = Number(input.split(/\\s+/)[0] ?? 0);\n\n// TODO: Solve the problem using 'n'\nconsole.log(n);",
+  "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    n = int(input_data[0]) if input_data else 0\n    \n    # TODO: Solve the problem using 'n'\n    print(n)\n\nif __name__ == '__main__':\n    main()",
+  "java": "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        long n = sc.hasNextLong() ? sc.nextLong() : 0;\n        \n        // TODO: Solve the problem using 'n'\n        System.out.println(n);\n    }\n}",
+  "c": "#include <stdio.h>\n\nint main() {\n    long long n = 0;\n    if (scanf(\"%lld\", &n) == 1) {\n        // TODO: Solve the problem using 'n'\n        printf(\"%lld\\n\", n);\n    }\n    return 0;\n}",
+  "cpp": "#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    long long n = 0;\n    if (cin >> n) {\n        // TODO: Solve the problem using 'n'\n        cout << n << \"\\n\";\n    }\n    return 0;\n}"
+}
   })
 ];
 
