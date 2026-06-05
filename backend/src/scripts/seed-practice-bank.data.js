@@ -850,7 +850,7 @@ const PRACTICE_BANK = [
     ]
   }),
   problem({
-    slug: "coin-change-minimum-coins",
+    slug: "coin-change-minimum-coins-v1",
     title: "Coin Change Minimum Coins",
     difficulty: "hard",
     descriptionMarkdown: "Line1: amount. Line2: k and k coin values. Print min coins or `-1`.",
