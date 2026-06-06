@@ -81,7 +81,7 @@ function mapCompilerStatus(r) {
  * Submit code to OnlineCompiler with retry support.
  * Retries up to `maxRetries` times on "Internal error: code execution failed".
  */
-async function createSubmission({ language, source_code, stdin }, maxRetries = 3) {
+async function createSubmission({ language, source_code, stdin }, maxRetries = 5) {
   const compiler = COMPILER_MAP[language];
   if (!compiler) throw new HttpError(400, "Unsupported language");
 
@@ -95,10 +95,10 @@ async function createSubmission({ language, source_code, stdin }, maxRetries = 3
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      // Add a small delay before each retry (not the first attempt)
+      // Add a backoff delay before each retry (not the first attempt)
       if (attempt > 1) {
         // eslint-disable-next-line no-await-in-loop
-        await sleep(attempt * 600); // 1.2s, 1.8s for retries 2 and 3
+        await sleep(attempt * 1000); // 2s, 3s, 4s, 5s for retries 2, 3, 4, 5
         // eslint-disable-next-line no-console
         console.log(`[ONLINECOMPILER] Retrying attempt ${attempt}/${maxRetries}...`);
       }
@@ -159,9 +159,9 @@ async function runAgainstTestCases({ language, sourceCode, testCases }) {
   for (let i = 0; i < testCases.length; i += 1) {
     const tc = testCases[i];
 
-    // Add a small delay between test cases to avoid rate limiting
+    // Add a delay between test cases to avoid rate limiting (OnlineCompiler free tier limits)
     // eslint-disable-next-line no-await-in-loop
-    if (i > 0) await sleep(300);
+    if (i > 0) await sleep(1000);
 
     // eslint-disable-next-line no-await-in-loop
     const r = await createSubmission({
