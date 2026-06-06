@@ -1724,4 +1724,3 @@ export function ProblemDetailPage() {
     </Box>
   );
 }
-}
